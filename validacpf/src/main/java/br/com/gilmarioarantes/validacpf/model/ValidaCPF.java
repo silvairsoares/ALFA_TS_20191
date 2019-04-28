@@ -9,6 +9,11 @@ public class ValidaCPF {
         int quantidadeZeros = 11 - cpf.length();
         int soma = 0;
 
+        //valida se a quantidade de dígitos informados é maior de 11
+        if(cpf.length() > 11){
+            return result;
+        }
+
         //validar se existe algum caracter que não seja dígito
         for(int i = 0; i < cpf.length(); i++){
             if(!Character.isDigit(cpf.charAt(i))){
@@ -26,10 +31,7 @@ public class ValidaCPF {
             j++;
         }
 
-        //valida se a quantidade de dígitos informados é maior de 11
-        if(cpf.length() > 11){
-            return result;
-        }
+
 
         //valida se todos os números são iguais
         if(numerosCpf[0] == numerosCpf[1] &&
