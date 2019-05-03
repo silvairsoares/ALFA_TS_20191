@@ -1,15 +1,14 @@
-import br.com.gilmar.Avaliacao;
-import br.com.gilmar.ValoresInvalidosException;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
+package br.com.gilmar;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class AvaliacaoTeste {
 
     private Avaliacao avaliacao;
 
-    @Before
+    @BeforeTest
     public void setup(){
         avaliacao = new Avaliacao();
     }
