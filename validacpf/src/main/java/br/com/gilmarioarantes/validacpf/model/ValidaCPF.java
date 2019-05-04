@@ -52,7 +52,14 @@ public class ValidaCPF {
             soma += numerosCpf[i] * (10-i);
         }
 
-        int primeiroDigito = (11-(soma%11));
+        int restoDivisaoPrimeiroDigito = (soma%11);
+
+        int primeiroDigito = 0;
+        if(restoDivisaoPrimeiroDigito < 2){
+            primeiroDigito = 0;
+        }else{
+            primeiroDigito = 11 - restoDivisaoPrimeiroDigito;
+        }
 
         //Cálculo do segundo dígito
         soma = 0;
@@ -60,7 +67,14 @@ public class ValidaCPF {
             soma += numerosCpf[i] * (11-i);
         }
 
-        int segundoDigito = (11-(soma%11));
+        int restoDivisaoSegundoDigito = (soma%11);
+
+        int segundoDigito = 0;
+        if(restoDivisaoSegundoDigito < 2){
+            segundoDigito = 0;
+        }else{
+            segundoDigito = 11 - restoDivisaoSegundoDigito;
+        }
 
         result = (primeiroDigito == numerosCpf[9]) && (segundoDigito ==  numerosCpf[10]);
 
