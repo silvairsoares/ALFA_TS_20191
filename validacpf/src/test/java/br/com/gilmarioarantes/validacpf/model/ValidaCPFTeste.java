@@ -1,13 +1,13 @@
 package br.com.gilmarioarantes.validacpf.model;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class ValidaCPFTeste {
     ValidaCPF app;
 
-    @Before
+    @BeforeTest
     public void setup(){
         app = new ValidaCPF();
     }
